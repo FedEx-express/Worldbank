@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Details</title>
+    <style>
+   h3{
+       font-size:40px;
+   }
+   input{
+       padding:19px 130px 19px 3px;
+        margin-bottom:25px;
+        outline:none;
+        background-color:;
+        border:none;
+        border-radius:12px;
+        box-shadow:4px 2px 6px rgba(0,0,0,0.6)
+   }
+    button {
+        padding: 10px 35px;
+        margin-left:110px;
+        background: purple;
+        border:none;
+        color: white;
+    }  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>
+            Transfer Details 
+        </h3>
+        <form>
+        <div class="file">
+            <input type="text" placeholder="Receiver Acc Name"id="name">
+            <input type="text" placeholder="Reciever Bank" id="bank">
+            <input type="text" placeholder="Receiver Account Number" id="acc-num">
+            <input type="text"placeholder ="Receiver Country" id="country">
+      <input type="text" placeholder="Receiver Phone Number" id="number">
+      <input type="text" placeholder="Transfer Amount" id="Trf">
+            <input type="password" placeholder="Transfer pin" id="pin">
+        </div>
+        <p id="check"></p>
+      <button type="submit" onclick="vaild()" >Send</button>
+      </form>
+    </div>
+    
+    
+    <script>
+  const name=document.getElementById("name");
+  const bank=document.getElementById("bank")
+const acc=document.getElementById("acc-num")
+ const country=document.getElementById("country")
+  const number=document.getElementById("number")
+const  trf =document.getElementById("Trf")
+  const pin=document.getElementById("pin")
+const check=document.getElementById("errors");
+  function vaild(){
+   let errors =[ ];
+      if(name.value=" " || name.value==null){
+          errors.push("Enter Account Name")
+      }
+      if(bank.value=" " || bank.value==null){
+          errors.push("Enter Bank Name")
+      }
+      if(acc.value=" " || acc.value==null){
+          errors.push("Enter Account Number")
+      }
+  if(country.value=" " || name.value==null){
+          errors.push("Enter Country Name")
+      }
+   if(number.value=" " || number.value==null){
+          errors.push("Enter Phone Number")
+      }
+   if(trf.value=" " || trf.value==null){
+          errors.push("Enter Account Name")
+      }   
+   if(pin.value.length<4){
+          errors.push("Enter Transfer Pin")
+      }
+      
+      else if(pin.value==="ADIN"){
+   alert("Transactions Pending Contact Your Bank")
+      } 
+      if(errors.length>0){
+          check.innerText=errors 
+          
+      }
+      
+  }
+  
+
+    </script>
+</body>
+</html>
